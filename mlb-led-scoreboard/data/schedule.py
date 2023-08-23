@@ -74,10 +74,11 @@ class Schedule:
     # offday code
     def is_offday_for_preferred_team(self):
         if self.config.preferred_teams:
-            return not any(
-                data.teams.TEAM_FULL[self.config.preferred_teams[0]] in [game["away_name"], game["home_name"]]
-                for game in self.__all_games  # only care if preferred team is actually in list
-            )
+            for team in self.config.preferred_teams:
+                for game in self.__all_games:
+                    if data.teams.TEAM_FULL[team] in [game["away_name"], game["home_name"]]:
+                        return False
+            return True
         else:
             return True
 
