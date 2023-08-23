@@ -17,6 +17,7 @@ do
   elif [ "$currently_running" = true ]; then
     echo "Killing main.py"
     sudo pkill -f main.py
+    sudo reboot
     currently_running=false
   fi
   echo "Bottom currently_running: $currently_running"
