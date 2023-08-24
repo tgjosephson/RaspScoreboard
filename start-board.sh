@@ -1,3 +1,5 @@
+exit 0
+
 echo "starting board"
 python3 main.py
 cd mlb-led-scoreboard/
