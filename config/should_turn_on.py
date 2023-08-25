@@ -10,7 +10,7 @@ if config['power'] == 'OFF':
 
 for time_window in config['display_times']:
     current_time = int(datetime.now().strftime("%H%M"))
-    if current_time > time_window[0] and current_time < time_window[1]:
+    if current_time >= time_window[0] and current_time <= time_window[1]:
         print("True")
         exit(0)
 
