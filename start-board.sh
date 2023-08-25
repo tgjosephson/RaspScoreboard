@@ -1,17 +1,15 @@
 echo "starting board"
-python3 main.py
-cd mlb-led-scoreboard/
 
 currently_running=false
 while :;
 do
-  current_date_time=$(date +%H%M)
-  echo "Current date and time: $current_date_time"
   echo "Top currently_running: $currently_running"
-  if [ "$current_date_time" -ge 0700 -a "$current_date_time" -le 2200 ]; then
+  if [ "$(python3 ./config/should_turn_on.py)" = "True" ]; then
     if [ "$currently_running" = false ]; then
       echo "Starting main.py"
+      cd mlb-led-scoreboard/
       sudo python3 main.py --led-gpio-mapping="adafruit-hat" --led-brightness 30 &
+      cd ..
       currently_running=true
     fi
   elif [ "$currently_running" = true ]; then
@@ -21,7 +19,7 @@ do
     currently_running=false
   fi
   echo "Bottom currently_running: $currently_running"
-  sleep 30
+  sleep 5
 done
 
 echo "end"
