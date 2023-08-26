@@ -1,9 +1,15 @@
 {
   "power": "ON",
-  "display_times": [
-    [700, 1100],
-    [1700, 2200]
-  ],
+  "display_times": {
+    "weekday": [
+      [700, 900],
+      [1700, 2200]
+    ],
+    "weekend": [
+      [800, 1100],
+      [1700, 2200]
+    ]
+  },
   "brightness": {
     "default": 30
   }
