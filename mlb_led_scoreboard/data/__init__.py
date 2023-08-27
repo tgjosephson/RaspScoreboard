@@ -1,4 +1,8 @@
 import time
+import os
+# print(os.getcwd())
+# os.chdir('..')
+# print(os.getcwd())
 from data.screens import ScreenType
 
 import debug

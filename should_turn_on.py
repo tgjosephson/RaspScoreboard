@@ -1,8 +1,19 @@
+import os
+local = False
+
+# print(os.getcwd())
+# if local:
+#     os.chdir('mlb_led_scoreboard')
+# print(os.getcwd())
+
 import json
 from datetime import datetime
+from config.custom import Custom
 
 config_file = open('./config/board-config.json')
 config = json.load(config_file)
+
+data = Custom().is_preferred_team_playing()
 
 # Overall power
 if config['power'] == 'OFF':

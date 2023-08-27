@@ -4,10 +4,10 @@ currently_running=false
 while :;
 do
   echo "Top currently_running: $currently_running"
-  if [ "$(python3 ./config/should_turn_on.py)" = "True" ]; then
+  if [ "$(python3 ./should_turn_on.py)" = "True" ]; then
     if [ "$currently_running" = false ]; then
       echo "Starting main.py"
-      cd mlb-led-scoreboard/
+      cd mlb_led_scoreboard/
       sudo python3 main.py --led-gpio-mapping="adafruit-hat" --led-brightness 30 &
       cd ..
       currently_running=true

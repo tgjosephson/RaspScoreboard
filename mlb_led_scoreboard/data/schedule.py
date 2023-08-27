@@ -161,3 +161,11 @@ class Schedule:
     def __filter_list_of_games(games, filter_teams):
         teams = [data.teams.TEAM_FULL[t] for t in filter_teams]
         return list(game for game in games if set([game["away_name"], game["home_name"]]).intersection(set(teams)))
+
+    # # Custom addition
+    # def is_preferred_team_playing(self, preferred_games):
+    #     current_time = datetime.now()
+    #     for game in preferred_games:
+    #         game_time = datetime.strptime(game["game_datetime"], '%Y-%m-%dT%H:%M:%Sz')
+    #         if ((game_time - current_time).seconds)/60 < 180:
+    #             return True
