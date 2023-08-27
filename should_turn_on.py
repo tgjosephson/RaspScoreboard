@@ -13,8 +13,6 @@ from config.custom import Custom
 config_file = open('./config/board-config.json')
 config = json.load(config_file)
 
-data = Custom().is_preferred_team_playing()
-
 # Overall power
 if config['power'] == 'OFF':
     print("False")
@@ -32,5 +30,11 @@ for time_window in display_times:
     if current_time >= time_window[0] and current_time <= time_window[1]:
         print("True")
         exit(0)
+
+# Preferred team playing
+pref_playing = Custom().is_preferred_team_playing()
+if pref_playing:
+    print("True")
+    exit(0)
 
 print("False")

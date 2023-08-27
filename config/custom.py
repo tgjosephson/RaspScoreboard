@@ -9,7 +9,10 @@ class Custom:
         preferred_teams = json["preferred"]["teams"]
 
         date = custom_utils.parse_today(end_of_day)
-        all_games = statsapi.schedule(date.strftime("%Y-%m-%d"))
+        try:
+            all_games = statsapi.schedule(date.strftime("%Y-%m-%d"))
+        except:
+            print("Exception when getting all games from statsapi")
 
         self.preferred_games = custom_utils.filter_list_of_games(all_games, preferred_teams)
 
@@ -19,9 +22,5 @@ class Custom:
         for game in self.preferred_games:
             game_time = datetime.strptime(game["game_datetime"], '%Y-%m-%dT%H:%M:%Sz')
             timedelta = game_time - current_time
-            if timedelta.days < 0 or (timedelta.seconds)/60 < 180:
-                # return True
-                print("is_preferred_team_playing - true")
-            else:
-                print("is_preferred_team_playing - false")
-
+            if timedelta.days < 0 or (timedelta.seconds)/60 < 120:
+                return True

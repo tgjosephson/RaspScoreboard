@@ -1,5 +1,5 @@
 echo "starting board"
-exit 0
+
 currently_running=false
 while :;
 do
