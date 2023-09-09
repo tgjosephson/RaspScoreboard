@@ -1,5 +1,5 @@
 {
-  "power": "ON",
+  "power": "OFF",
   "display_times": {
     "weekday": [
       [700, 900],
