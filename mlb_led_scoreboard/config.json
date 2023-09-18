@@ -46,7 +46,7 @@
 	"short_team_names_for_runs_hits": true,
 	"preferred_game_update_delay_in_10s_of_seconds": 0,
 	"pregame_weather": true,
-	"scrolling_speed": 3,
+	"scrolling_speed": 4,
 	"debug": false,
 	"demo_date": false
 }
