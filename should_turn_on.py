@@ -32,9 +32,9 @@ for time_window in display_times:
         exit(0)
 
 # Preferred team playing
-pref_playing = Custom().is_preferred_team_playing()
-if pref_playing:
-    print("True")
-    exit(0)
+# pref_playing = Custom().is_preferred_team_playing()
+# if pref_playing:
+#     print("True")
+#     exit(0)
 
 print("False")
