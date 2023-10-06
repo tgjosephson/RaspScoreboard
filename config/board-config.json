@@ -1,6 +1,6 @@
 {
   "power": "ON",
-  "mode": "nhl",
+  "mode": "mlb",
   "display_times": {
     "weekday": [
       [700, 800],
