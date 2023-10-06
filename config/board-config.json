@@ -1,9 +1,10 @@
 {
   "power": "ON",
+  "mode": "nhl",
   "display_times": {
     "weekday": [
       [700, 800],
-      [1800, 2200]
+      [1400, 2200]
     ],
     "weekend": [
       [730, 1100],
