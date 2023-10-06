@@ -15,6 +15,7 @@ do
       elif mode_setting == 'mlb'; then
         cd mlb_led_scoreboard/
         sudo python3 main.py --led-gpio-mapping="adafruit-hat" --led-brightness 30 &
+      fi
       cd ..
       currently_running=true
     fi
@@ -24,6 +25,7 @@ do
       sudo pkill -f src/main.py
     elif mode_setting == 'mlb'; then
       sudo pkill -f main.py
+    fi
     sudo reboot
     currently_running=false
   fi
