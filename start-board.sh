@@ -14,7 +14,7 @@ do
         sudo python3 src/main.py --led-gpio-mapping="adafruit-hat" --led-slowdown-gpio=2 &
       elif [ "$mode_setting" = 'mlb' ]; then
         cd mlb_led_scoreboard/
-        sudo python3 main.py --led-gpio-mapping="adafruit-hat" --led-brightness 30 &
+        sudo python3 main.py --led-gpio-mapping="adafruit-hat" --led-cols 64 &
       fi
       cd ..
       currently_running=true
